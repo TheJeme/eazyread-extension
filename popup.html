@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EazyRead</title>
+  <style>
+    html {
+      user-select: none;
+      font-size: 18px;
+    }
+    body {
+      min-width: 200px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      width: 110px;
+    }
+    select {
+      margin-top: 5px;
+      width: 100px;
+      outline: none;
+    }
+    button {
+      background: white;
+      border: 3px solid #999;
+      outline: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      width: 50px;
+    }
+    h2 {
+      width: 110px;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .buttons {
+      display: flex;
+    }
+    .field {
+      display: flex;
+      align-items: center;
+    }
+    #on-button {
+      background-color: white;
+      font-weight: normal;
+    }
+    #off-button {
+      background-color: #999;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h2>EazyRead</h2>
+    <div class="buttons">
+      <button id="on-button">
+        On
+      </button>
+      <button id="off-button">
+        Off
+      </button>
+    </div>
+  </div>
+  <div class="field">
+    <label for="font-size-select">Font size:</label>
+    <select id="font-size-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="letter-spacing-select">Letter spacing:</label>
+    <select id="letter-spacing-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="bolding-select">Bolding:</label>
+    <select id="bolding-select">
+      <option value="enabled">Enabled</option>
+      <option value="disabled">Disabled</option>
+    </select>
+  </div>
+</body>
+<script src="popup.js"></script>
+</html>
