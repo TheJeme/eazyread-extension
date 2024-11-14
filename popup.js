@@ -5,6 +5,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const letterSpacingSelect = document.getElementById('letter-spacing-select');
   const boldingSelect = document.getElementById('bolding-select');
 
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.scripting.executeScript(
+      {
+        target: { tabId: tabs[0].id },
+        func: () => document.getElementsByClassName('ez-processed').length > 0,
+      },
+      (results) => {
+        if (results[0].result) {
+          onButton.style.backgroundColor = '#999';
+          onButton.style.fontWeight = 'bold';
+          offButton.style.backgroundColor = 'white';
+          offButton.style.fontWeight = 'normal';
+        } else {
+          onButton.style.backgroundColor = 'white';
+          onButton.style.fontWeight = 'normal';
+          offButton.style.backgroundColor = '#999';
+          offButton.style.fontWeight = 'bold';
+        }
+      }
+    );
+  });
+
+
   // Load saved settings
   chrome.storage.sync.get(['fontSize', 'letterSpacing', 'boldingSelect'], (data) => {
     if (data.fontSize) fontSizeSelect.value = data.fontSize;

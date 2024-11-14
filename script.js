@@ -1,7 +1,7 @@
 (function() {
   // Fetch settings from chrome.storage
   chrome.storage.sync.get(['enabled', 'fontSize', 'letterSpacing', 'bolding'], (data) => {
-    document.body.innerHTML=document.body.innerHTML.replace(/\u00AD/g, ''); // Remove soft hyphens
+    document.body.innerHTML = document.body.innerHTML.replace(/\u00AD/g, ''); // Remove soft hyphens
     const enabled = data.enabled;
     const fontSizeScale = parseInt(data.fontSize) || 5;
     const letterSpacingScale = parseInt(data.letterSpacing) || 5;
